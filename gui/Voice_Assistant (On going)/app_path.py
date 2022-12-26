@@ -19,6 +19,7 @@ E1=Entry(font=("Arial", 18),width='28').grid(row=1,column=1,  padx= 7, pady= 8)
 E2L2=Label(text='  Enter Path  ',font=("Arial", 18)).grid(row=2,column=0, padx= 7, pady= 8)
 E2=Entry(font=("Arial", 18),width='28').grid(row=2,column=1, padx= 7, pady= 8)
 
-B1= Button(text='Submit',command=txtfile,width='24',height='2').place(x=210,y=150)
 
+B1= Button(text='Submit',command=txtfile,width='24',height='2').place(x=210,y=150)
+#print(z)
 file.mainloop()

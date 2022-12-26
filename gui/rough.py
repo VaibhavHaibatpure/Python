@@ -1,38 +1,40 @@
-import winapps
- 
-list_of_app=''
-for item in winapps.list_installed():
-    list_of_app=list_of_app+str(item)
+s='22+3-55*7/2'
 
-sp1=list_of_app.split("InstalledApplication")
+count=0
+n1=''
+k=''
+psym=''
+total=None
+for i in s:
+    if i=='+' or i=='-' or i=='*' or i=='/':
+        count+=1
+        sym=i
+        if count>1:
+            print(k)
+            if i=='+':
+                total=int(k)+int(n1)
+                k=total
+            elif i=='-':
+                total=int(k)-int(n1)
+                k=total
+            elif i=='*':
+                total=int(k)*int(n1)
+                k=total
+            elif i=='-':
+                total=int(k)/int(n1)
+                k=total
 
-index=['Name','Version','Install_Location','Publisher']
-applications=[]
+            
 
-print(sp1)
+        psym=sym
+        
+    
+    if count==1:
+        k=n1
+        n1=''
+    
 
-for i in range(len(sp1)):
-    #print(i)
-    lst=[]
-    if i>0:
-        try:
-            sp2=sp1[i].split("'")
-            #print(sp2)
-            #print(sp2[3])
-            #   1   3   5   7
-            lst.append(sp2[1])
-            lst.append(sp2[3])
-            lst.append(sp2[5])
-            lst.append(sp2[7])
-            applications.append(lst)
-        except:
-            print(sp2)
+    if i!='+' or i!='-' or i!='*' or i!='/':
+        n1=n1+i
 
-print(len(sp1))
-    #print(sp2)
-    #print('\n\n')
-
-for i in applications:
-    break
-    print(i)
-    print()
+print(total)
